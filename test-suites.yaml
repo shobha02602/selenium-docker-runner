@@ -1,0 +1,26 @@
+version: "3"
+services: 
+ vendor-portal:
+    image: shobha02602/selenium
+    environment:
+    - BROWSER=chrome
+    - HUB_HOST=hub #since they all are in same network no need to give ip here
+    - TEST_SUITE=vendor-portal.xml
+    - THREAD_COUNT=3
+
+#do volume mapping to see the report since report will be present inside container 
+    volumes:
+    - ./output/vendor-portal:/home/selenium-docker/test-output
+    # we can add multiple 
+ flight-reservation:
+    image: shobha02602/selenium
+    environment:
+    - BROWSER=firefox
+    - HUB_HOST=hub #since they all are in same network no need to give ip here
+    - TEST_SUITE=flight-reservation.xml
+    - THREAD_COUNT=3
+
+#do volume mapping to see the report since report will be present inside container 
+    volumes:
+    - ./output/flight-reservation:/home/selenium-docker/test-output
+
