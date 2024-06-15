@@ -6,7 +6,7 @@ services:
     - BROWSER
     - HUB_HOST=hub #since they all are in same network no need to give ip here
     - TEST_SUITE=vendor-portal.xml
-    - THREAD_COUNT=3
+    - THREAD_COUNT=1
 
 #do volume mapping to see the report since report will be present inside container 
     volumes:
@@ -18,7 +18,7 @@ services:
     - BROWSER
     - HUB_HOST=hub #since they all are in same network no need to give ip here
     - TEST_SUITE=flight-reservation.xml
-    - THREAD_COUNT=3
+    - THREAD_COUNT=1
 
 #do volume mapping to see the report since report will be present inside container 
     volumes:
